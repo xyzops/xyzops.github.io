@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>XYZops home</title>
-    </head>
-    <body>
-        <h1>Bienvenue aux XYZops-ers! 👋</h1>
-    </body>
-</html>
+---
+layout: default
+title: XYZops home
+---
+<h1>Bienvenue aux XYZops-ers sur {{ page.title }}! 👋</h1>
+
+{% assign myEvent = site.data.upcomingEvents.first %}
+<h2><a href="{{ myEvent.url }}">{{ myEvent.title }} - {{ myEvent.start | date_to_string }}</a></h2>
+<p><strong>Location: {{ myEvent.location }}</strong></p>
+<p>{{ myEvent.summary }}</p>
+<p>{{ myEvent.content }}</p>

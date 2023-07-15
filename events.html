@@ -1,0 +1,20 @@
+---
+layout: default
+title: XYZops home
+---
+<h1>Evènements à venir</h1>
+
+{% for myEvent in site.data.upcomingEvents %}
+<h2><a href="{{ myEvent.url }}">{{ myEvent.title }} - {{ myEvent.start | date_to_string }}</a></h2>
+<p><strong>Location: {{ myEvent.location }}</strong></p>
+<p>{{ myEvent.summary }}</p>
+{% endfor %}
+
+<h1>Evènements passés</h1>
+
+{% for myEvent in site.data.pastEvents %}
+<h2><a href="{{ myEvent.url }}">{{ myEvent.title }} - {{ myEvent.start | date_to_string }}</a></h2>
+<p><strong>Location: {{ myEvent.location }}</strong></p>
+<p>{{ myEvent.summary }}</p>
+{% endfor %}
+
