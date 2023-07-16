@@ -4,8 +4,21 @@ title: XYZops home
 ---
 <h1>Bienvenue aux XYZops-ers sur {{ page.title }}! 👋</h1>
 
-{% assign myEvent = site.data.upcomingEvents.first %}
-<h2><a href="{{ myEvent.url }}">{{ myEvent.title }} - {{ myEvent.start | date_to_string }}</a></h2>
-<p><strong>Location: {{ myEvent.location }}</strong></p>
-<p>{{ myEvent.summary }}</p>
-<p>{{ myEvent.content }}</p>
+<h2>Prochaines rencontres:</h2>
+{% assign nextEvent = "" %}
+{% for myEvent in site.events %}
+<!-- events are listed in ascending order -->
+<!-- so first event to be after (now) is the next one -->
+{% if myEvent.start >= site.time %}
+{% assign nextEvent = myEvent %}
+{% break %}
+{% endif %}
+{% endfor %}
+
+{% if nextEvent == "" %}
+<p><strong>Aucune rencontre programmée pour le moment. N'hésitez pas à nous contacter pour proposer un sujet!</strong></p>
+{% else %}
+<h2><a href="{{ nextEvent.url }}">{{ nextEvent.title }} - {{ nextEvent.start | date_to_string }}</a></h2>
+<p><strong>Location: {{ nextEvent.location }}</strong></p>
+<p>{{ nextEvent.summary }}</p>
+{% endif %}
