@@ -1,9 +1,9 @@
 ---
 - name: Home
   link: /
-- name: About
+- name: À propos
   link: /about.html
 - name: Blog
   link: /blog.html
-- name: Events
+- name: Rencontres
   link: /events.html

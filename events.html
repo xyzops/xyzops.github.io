@@ -7,7 +7,7 @@ title: XYZops home
 {% for myEvent in site.events %}
 {% if myEvent.start >= site.time %}
 <h2><a href="{{ myEvent.url }}">{{ myEvent.title }} - {{ myEvent.start | date_to_string }}</a></h2>
-<p><strong>Location: {{ myEvent.location }}</strong></p>
+<p><strong>Lieu: {{ myEvent.location }}</strong></p>
 <p>{{ myEvent.summary }}</p>
 {% endif %}
 {% endfor %}
@@ -17,7 +17,7 @@ title: XYZops home
 {% for myEvent in site.events %}
 {% if myEvent.start < site.time %}
 <h2><a href="{{ myEvent.url }}">{{ myEvent.title }} - {{ myEvent.start | date_to_string }}</a></h2>
-<p><strong>Location: {{ myEvent.location }}</strong></p>
+<p><strong>Lieu: {{ myEvent.location }}</strong></p>
 <p>{{ myEvent.summary }}</p>
 {% endif %}
 {% endfor %}

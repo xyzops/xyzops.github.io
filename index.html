@@ -2,7 +2,12 @@
 layout: default
 title: XYZops home
 ---
-<h1>Bienvenue aux XYZops-ers sur {{ page.title }}! 👋</h1>
+<h1>Bienvenue aux XYZops-ers! 👋</h1>
+
+<h2>C'est quoi XYZops?</h2>
+Ce sont des rencontres techniques et ouvertes à tous sur la région de Sophia-Antipolis.
+
+Plus d'infos sur <a href="2023/07/16/init.html">le premier post du blog</a>.
 
 <h2>Prochaines rencontres:</h2>
 {% assign nextEvent = "" %}
@@ -19,6 +24,6 @@ title: XYZops home
 <p><strong>Aucune rencontre programmée pour le moment. N'hésitez pas à nous contacter pour proposer un sujet!</strong></p>
 {% else %}
 <h2><a href="{{ nextEvent.url }}">{{ nextEvent.title }} - {{ nextEvent.start | date_to_string }}</a></h2>
-<p><strong>Location: {{ nextEvent.location }}</strong></p>
+<p><strong>Lieu: {{ nextEvent.location }}</strong></p>
 <p>{{ nextEvent.summary }}</p>
 {% endif %}
