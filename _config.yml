@@ -3,3 +3,9 @@ collections:
   events:
     output: true
     permalink: /event/:path/
+
+title: XYZOps
+description: Meetups XYZ/ops sur Sophia Antipolis
+show_downloads: false
+google_analytics:
+theme: jekyll-theme-hacker
